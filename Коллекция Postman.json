@@ -1,0 +1,576 @@
+{
+	"info": {
+		"_postman_id": "6d865b2a-6b4c-43c4-9420-8e610f321461",
+		"name": "Практическое тестирование JSONPlaceholder API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47202925",
+		"_collection_link": "https://avionics-cosmologist-8371067-4731006.postman.co/workspace/%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9-%D0%A8%D0%B8%D0%BF%D0%B5%D0%BB%D1%91%D0%B2's-Workspace~60198328-0d0d-4294-8dd7-6e5f4dc1cde7/collection/47202925-6d865b2a-6b4c-43c4-9420-8e610f321461?action=share&source=collection_link&creator=47202925"
+	},
+	"item": [
+		{
+			"name": "Проверка структуры успешного ответа",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_address}}posts",
+					"host": [
+						"{{server_address}}posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверка фильтрации по userId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_address}}posts?userId=7",
+					"host": [
+						"{{server_address}}posts"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Невалидные данные в параметре userId (буквы вместо числа)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_address}}posts?userId=abc",
+					"host": [
+						"{{server_address}}posts"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "abc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Невалидные  данные в параметре userId (спецсимволы вместо числа) Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_address}}posts?userId=$№*",
+					"host": [
+						"{{server_address}}posts"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "$№*"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверка несуществующего userId=999",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_address}}posts?userId=999",
+					"host": [
+						"{{server_address}}posts"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "999"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверка параметра _limit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_address}}posts?_limit=5",
+					"host": [
+						"{{server_address}}posts"
+					],
+					"query": [
+						{
+							"key": "_limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Невалидные данные в параметре _limit (буквы вместо числа)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_address}}posts?_limit=abc",
+					"host": [
+						"{{server_address}}posts"
+					],
+					"query": [
+						{
+							"key": "_limit",
+							"value": "abc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Невалидные данные в параметре _limit (спецсимволы вместо числа)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_address}}posts?_limit=$№*",
+					"host": [
+						"{{server_address}}posts"
+					],
+					"query": [
+						{
+							"key": "_limit",
+							"value": "$№*"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверка параметра _limit = 1000",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_address}}posts?_limit=1000",
+					"host": [
+						"{{server_address}}posts"
+					],
+					"query": [
+						{
+							"key": "_limit",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверка параметра _page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_address}}posts?_page=1",
+					"host": [
+						"{{server_address}}posts"
+					],
+					"query": [
+						{
+							"key": "_page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Невалидные данные в параметре _page (буквы вместо числа)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_address}}posts?_page=abc",
+					"host": [
+						"{{server_address}}posts"
+					],
+					"query": [
+						{
+							"key": "_page",
+							"value": "abc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Невалидные данные в параметре _page (спецсимволы вместо числа)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_address}}posts?_page=$№*",
+					"host": [
+						"{{server_address}}posts"
+					],
+					"query": [
+						{
+							"key": "_page",
+							"value": "$№*"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверка параметра _page = 1000",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_address}}posts?_page=1000",
+					"host": [
+						"{{server_address}}posts"
+					],
+					"query": [
+						{
+							"key": "_page",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Некорректный параметр в URL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_address}}posts?invalid_param=test",
+					"host": [
+						"{{server_address}}posts"
+					],
+					"query": [
+						{
+							"key": "invalid_param",
+							"value": "test"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверка заголовков ответа",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_address}}posts",
+					"host": [
+						"{{server_address}}posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение первые 5 постов пользователя с userId=7",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server_address}}posts?userId=7&_limit=5",
+					"host": [
+						"{{server_address}}posts"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "7"
+						},
+						{
+							"key": "_limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверка структуры успешного ответа",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Test Post\",\r\n  \"body\": \"This is a test post body.\",\r\n  \"userId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_address}}posts",
+					"host": [
+						"{{server_address}}posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Отсутствие данных в параметре Title в боди запроса",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"\",\r\n  \"body\": \"This is a test post body.\",\r\n  \"userId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_address}}posts",
+					"host": [
+						"{{server_address}}posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Отсутствие параметра Title в боди запроса",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"body\": \"This is a test post body.\",\r\n  \"userId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_address}}posts",
+					"host": [
+						"{{server_address}}posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Отсутствие  данных в параметре  Body в боди запроса",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Test Post\",\r\n  \"body\": \"\",\r\n  \"userId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_address}}posts",
+					"host": [
+						"{{server_address}}posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Отсутствие параметра Body в боди запроса",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Test Post\",\r\n  \"userId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_address}}posts",
+					"host": [
+						"{{server_address}}posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Отсутствие  данных в параметре UserId в боди запроса",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Test Post\",\r\n  \"body\": \"This is a test post body.\",\r\n  \"userId\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_address}}posts",
+					"host": [
+						"{{server_address}}posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Отсутствие параметра UserId в боди запроса",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Test Post\",\r\n  \"body\": \"This is a test post body.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_address}}posts",
+					"host": [
+						"{{server_address}}posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Невалидные данные в параметре userId (строка вместо числа)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Test Post\",\r\n  \"body\": \"This is a test post body.\",\r\n  \"userId\": \"abc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_address}}posts",
+					"host": [
+						"{{server_address}}posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Невалидные данные в параметре userId (спецсимволы вместо числа)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Test Post\",\r\n  \"body\": \"This is a test post body.\",\r\n  \"userId\": $№*\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_address}}posts",
+					"host": [
+						"{{server_address}}posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JSON запрос с пустым боди",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_address}}posts",
+					"host": [
+						"{{server_address}}posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверка на идемпотентность",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Idem\",\r\n  \"body\": \"Potency\",\r\n  \"userId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_address}}posts",
+					"host": [
+						"{{server_address}}posts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
